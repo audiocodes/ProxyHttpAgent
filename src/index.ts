@@ -1,18 +1,15 @@
 import * as https from 'https';
-import { Agent as HttpsAgent } from 'https';
+type HttpsAgent = https.Agent;
 import * as http from 'http';
-import { Agent as HttpAgent } from 'http';
-import * as url from 'url';
-import { UrlObject } from 'url';
+type HttpAgent = http.Agent;
 import * as tunnel from 'tunnel';
-import { ProxyOptions, HttpsProxyOptions } from 'tunnel';
 import { Spread } from './types/utils';
 
 export type IAgentOptions = tunnel.HttpOptions | tunnel.HttpOverHttpsOptions | tunnel.HttpsOverHttpOptions | tunnel.HttpsOverHttpsOptions;
 
-export type IProxyOptions = ProxyOptions & { protocol: 'http:' | 'https:' };
+export type IProxyOptions = tunnel.ProxyOptions & { protocol: 'http:' | 'https:' };
 
-export type IProxyHttpsOptions = HttpsProxyOptions & { protocol: 'http:' | 'https:' };
+export type IProxyHttpsOptions = tunnel.HttpsProxyOptions & { protocol: 'http:' | 'https:' };
 
 export type IOptions = Spread<
         Partial<https.AgentOptions> &
@@ -29,14 +26,14 @@ export function getProxyHttpAgent(options: IOptions): http.Agent | https.Agent  
     }
 
     if (typeof options.proxy === 'string') {
-        const parsedUrl: UrlObject = url.parse(options.proxy);
+        const parsedUrl = new URL(options.proxy);
         options.proxy = {
             ...parsedUrl,
             port: Number(parsedUrl.port)
-        } as any;
+        };
     }
-    
-    const proxy: IProxyOptions | IProxyHttpsOptions = options.proxy as any; 
+
+    const proxy = options.proxy as IProxyOptions | IProxyHttpsOptions;
 
     if (!options.endServerProtocol) {
         options.endServerProtocol = 'https:';
