@@ -1,10 +1,12 @@
-import https, { Server as HttpsServer } from "https";
-import http, { Server as HttpServer } from "http";
-import { AddressInfo } from "net";
+import * as https from 'https';
+import { Server as HttpsServer } from 'https';
+import * as http from 'http';
+import { Server as HttpServer } from 'http';
+import { AddressInfo } from 'net';
 import { ProxyServer } from './proxy';
-import fs from 'fs';
+import * as fs from 'fs';
 import { getProxyHttpAgent }  from '../src/index';
-import url from 'url';
+import * as url from 'url';
 import fetch from 'node-fetch';
 
 // util.inspect.defaultOptions.depth = null; //enable full object reporting in console.log
@@ -123,6 +125,10 @@ describe('API checks', () => {
     });
 });
 
+interface Res {
+    host: string;
+}
+
 // _______ http local test server
 describe('Node fetch', () => {
     describe('http local test server', () => {
@@ -190,7 +196,7 @@ describe('Node fetch', () => {
                 console.log('response :::::::::////>')
 
                 if (response.status === 200) {
-                    const data = await response.json();
+                    const data = (await response.json()) as Res;
     
                     if (data) {
                         expect(data.host).toEqual(`localhost:${localApiServerPort}`);
@@ -275,7 +281,7 @@ describe('Node fetch', () => {
                 console.log('"response !!!!!!!!!!!!"')
 
                 if (response.status === 200) {
-                    const data = await response.json();
+                    const data = (await response.json()) as Res;
     
                     console.log(data)
 

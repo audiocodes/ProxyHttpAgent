@@ -1,4 +1,5 @@
-import net, { Server, Socket } from 'net';
+import * as net from 'net';
+import { Server, Socket } from 'net';
 
 interface IPromiseFiber {
     promise: Promise<any>, resolve: Function, reject: Function

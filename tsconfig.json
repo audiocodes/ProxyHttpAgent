@@ -6,10 +6,8 @@
       "noImplicitAny": true,
       "lib": ["ESNext", "DOM"],
       "outDir": "./dist",
-      "target": "es5",
-      "moduleResolution": "node",
+      "target": "es2020",
       "resolveJsonModule": true,
-      "esModuleInterop": true,
       "typeRoots": [
         "./node_modules/@types",
         "./test/@types/"

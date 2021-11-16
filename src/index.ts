@@ -1,7 +1,11 @@
-import https, { Agent as HttpsAgent } from 'https';
-import http, { Agent as HttpAgent } from 'http';
-import url, { UrlObject } from 'url';
-import tunnel, { ProxyOptions, HttpsProxyOptions } from 'tunnel';
+import * as https from 'https';
+import { Agent as HttpsAgent } from 'https';
+import * as http from 'http';
+import { Agent as HttpAgent } from 'http';
+import * as url from 'url';
+import { UrlObject } from 'url';
+import * as tunnel from 'tunnel';
+import { ProxyOptions, HttpsProxyOptions } from 'tunnel';
 import { Spread } from './types/utils';
 
 export type IAgentOptions = tunnel.HttpOptions | tunnel.HttpOverHttpsOptions | tunnel.HttpsOverHttpOptions | tunnel.HttpsOverHttpsOptions;
