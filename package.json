@@ -8,30 +8,29 @@
     "/dist"
   ],
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "prepare": "npm run build",
-    "test": "npx jest",
-    "launchProxy": "npx ts-node ./test/launchProxy.ts"
+    "test": "jest",
+    "launchProxy": "node ./test/launchProxy.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/audiocodes/ProxyHttpAgent.git"
   },
   "dependencies": {
-    "@types/tunnel": "0.0.3",
     "tunnel": "0.0.6"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.7",
-    "@types/node-fetch": "^2.5.12",
-    "jest": "^27.3.1",
-    "node-fetch": "^2.6.6",
-    "proxy": "^1.0.2",
-    "ts-jest": "^27.0.7",
-    "ts-node": "^10.4.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "@types/node-fetch": "^2.6.13",
+    "@types/tunnel": "^0.0.7",
+    "jest": "^30.2.0",
+    "node-fetch": "^3.3.2",
+    "proxy": "^2.2.0",
+    "ts-jest": "^29.4.5",
     "tslint": "^6.1.3",
-    "typescript": "^4.4.4"
+    "typescript": "^5.9.3"
   },
   "author": "Glitnirian",
   "license": "ISC",
