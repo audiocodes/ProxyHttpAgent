@@ -1,22 +1,10 @@
 {
-    "compilerOptions": {
-      "declaration": true,
-      "declarationDir": "./dist",
-      "module": "commonjs",
-      "noImplicitAny": true,
-      "lib": ["ESNext", "DOM"],
-      "outDir": "./dist",
-      "target": "es2020",
-      "resolveJsonModule": true,
-      "typeRoots": [
-        "./node_modules/@types",
-        "./test/@types/"
-      ]
-    },
-    "typedocOptions": {
-      "mode": "modules",
-      "out": "docs"
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "dist"]
-  }
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "./dist",
+    "sourceMap": true
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
