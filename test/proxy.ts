@@ -139,7 +139,7 @@ function onConnection(clientToProxySocket: Socket) {
                 if (isConnectMethod) {
                     // Send Back OK to HTTPS CONNECT Request
                     console.log("ok >>>>")
-                    clientToProxySocket.write('HTTP/1.1 200 OK\r\n\n');
+                    clientToProxySocket.write('HTTP/1.1 200 OK\r\n\r\n');
                 } else {
                     console.log("data :::>")
                     console.log(data.toString())
