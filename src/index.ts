@@ -4,7 +4,7 @@ import * as http from 'http';
 import * as url from 'url';
 type HttpAgent = http.Agent;
 import * as tunnel from 'tunnel';
-import { Spread } from './types/utils';
+import { Spread } from './types/utils.js';
 
 export type IAgentOptions = tunnel.HttpOptions | tunnel.HttpOverHttpsOptions | tunnel.HttpsOverHttpOptions | tunnel.HttpsOverHttpsOptions;
 

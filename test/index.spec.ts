@@ -4,9 +4,9 @@ import { Server as HttpsServer } from 'https';
 import * as http from 'http';
 import { Server as HttpServer } from 'http';
 import { AddressInfo } from 'net';
-import { ProxyServer } from './proxy';
+import { ProxyServer } from './proxy.js';
 import * as fs from 'fs';
-import { getProxyHttpAgent } from '../src/index';
+import { getProxyHttpAgent } from '../src/index.js';
 import * as url from 'url';
 import fetch from 'node-fetch';
 
