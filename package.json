@@ -1,6 +1,6 @@
 {
   "name": "@audc/proxy-http-agent",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A factory to create http proxy agent! To create proxy tunneling! http and https (for both server and proxy)",
   "type": "module",
   "main": "./dist/index.js",
