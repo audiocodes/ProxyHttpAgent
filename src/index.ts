@@ -27,7 +27,7 @@ export function getProxyHttpAgent(options: IOptions): http.Agent | https.Agent  
     }
 
     if (typeof options.proxy === 'string') {
-        const parsedUrl = url.parse(options.proxy);
+        const parsedUrl = new URL(options.proxy);
         options.proxy = {
             host: parsedUrl.hostname,
             port: Number(parsedUrl.port),
